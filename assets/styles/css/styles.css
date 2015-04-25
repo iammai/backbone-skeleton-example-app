@@ -1,0 +1,9 @@
+.btn-floating.btn-large.upvote {
+    padding-top: 5px;
+    line-height: 100%; }
+.btn-floating.btn-large.upvote i {
+    line-height: 25px; }
+
+.story-header {
+    position: absolute;
+    padding: 20px; }
