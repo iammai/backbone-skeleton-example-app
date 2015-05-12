@@ -7,7 +7,8 @@ define([
 
     var Game = Backbone.Model.extend({
         idAttribute: "game_id",
-        urlRoot: config.apiUrl + '/games',
+//        urlRoot: config.apiUrl + '/games',
+        url: config.tempGameDetailsJSON,
         initialize: function(){
 
         }
@@ -22,6 +23,9 @@ define([
         var ret = new Game({game_id: game_id}).fetch();
         Game.store[game_id] = ret;
         return ret;
+    };
+    Game.updateVote = function(){
+        //
     };
 
     return Game;

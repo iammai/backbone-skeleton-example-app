@@ -1,0 +1,22 @@
+{
+    "id": 1,
+    "name": "CLG vs TSM",
+    "season_id": 1,
+    "submitted_by": null,
+    "submitted_by_id": null,
+    "upvotes": 99,
+    "videos": [
+        {
+            "type": "picks_and_bans",
+            "type_id": 1,
+            "id": "U-xDxQ57Ycg",
+            "start": 570
+        },
+        {
+            "type": "game_start",
+            "type_id": 2,
+            "id": "U-xDxQ57Ycg",
+            "start": 984
+        }
+    ]
+}

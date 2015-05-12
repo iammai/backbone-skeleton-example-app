@@ -6,8 +6,9 @@ define([
     'app/models/game',
     'app/collections/game_collection',
     'app/views/game_view',
+    'app/views/gamedetails_view',
     ''
-], function ($, _, Backbone, App, Game, GameCollection, GamesView) {
+], function ($, _, Backbone, App, Game, GameCollection, GamesView, GameDetailsView) {
 
     var AppRouter = Backbone.Router.extend({
 
@@ -17,7 +18,8 @@ define([
 
         routes: {
             '': 'indexRoute',
-            'games': 'games'
+            'games': 'games',
+            'games/:gameid': 'gameDetails'
         },
 
         // Home page
@@ -41,7 +43,19 @@ define([
                 });
                 self.gameView.render();
             });
-        }
+        },
+
+        gameDetails: function(id) {
+            var self = this;
+            this.game = new Game({game_id: id});
+            $.when(this.game.fetch()).always(function(game) {
+                self.gameDetaislView = new GameDetailsView({
+                    model: game
+                });
+                self.gameDetaislView.render();
+            });
+        },
+
     });
 
     return AppRouter;

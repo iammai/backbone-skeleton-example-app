@@ -13,22 +13,24 @@ define([
         template: Handlebars.compile( gamesTemplate ),
 
         initialize: function ( options ) {
-            var self = this;
         },
 
-        // Backbone events: we can bind events from html elements in the template here
         events: {
-            //'keyup .search-input': 'searchQuery',
-            //'click .button': 'showButton'
+            'click span.upvote-count': 'updateVote'
         },
 
         render: function() {
-
             $(this.el).html(this.template({
                 models: this.model
             }));
-
             return this;
+        },
+
+        updateVote: function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            var $el = $(event.target);
+            var game_id = parseInt($el.attr('data-gameid'), 10);
         }
 
     }));
